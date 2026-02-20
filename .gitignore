@@ -1,0 +1,29 @@
+# Binary
+faultline
+faultline.exe
+
+# Build output
+/dist/
+/bin/
+
+# Go
+*.test
+*.out
+vendor/
+
+# Temp / state
+faultline-state.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+*.env.local

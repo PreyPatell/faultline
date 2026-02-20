@@ -1,0 +1,21 @@
+name: basic-resilience
+description: >
+  Simulates a degraded network followed by a service kill.
+  Use this to verify your app handles connectivity issues and restarts gracefully.
+
+steps:
+  - action: inject_latency
+    service: my-api
+    params:
+      ms: "200"
+    wait: 5   # observe your monitoring for 5 seconds
+
+  - action: degrade_network
+    service: my-api
+    params:
+      loss: "15"
+    wait: 3
+
+  - action: kill
+    service: my-api
+    wait: 0
